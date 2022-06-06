@@ -11,7 +11,7 @@ describe('Logger Test', () => {
   });
   it('should log the request', () => {
     req.method = 'GET';
-    req.path = '/person';
+    req.path = '/food';
     logger(req, res, next);
     expect(consoleSpy).toHaveBeenCalled();
   });

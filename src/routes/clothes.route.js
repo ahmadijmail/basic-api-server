@@ -8,11 +8,18 @@ const { clothes } = require("../models/index");
 
 const clothesRouter = express.Router();
 //add routes
+clothesRouter.get("/", handelhome);
 clothesRouter.get("/clothes", getclothes);
 clothesRouter.get("/clothes/:id", getoneclothes);
 clothesRouter.post("/addclothes", createclothes);
 clothesRouter.put("/clothes/:id", updateclothes);
 clothesRouter.delete("/clothes/:id", deleteclothes);
+
+
+ function handelhome(req, res) {
+   
+    res.status(200).send('Hello User');
+}
 
 async function getclothes(req, res) {
     //get me everything it might be an array of objects
